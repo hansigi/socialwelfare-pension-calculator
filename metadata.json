@@ -1,0 +1,8 @@
+{
+  "name": "기초연금 · 장애인연금 통합 모의계산기",
+  "description": "2026년 보건복지부 최신 사업안내 지침 기준 기초연금, 장애인연금, 장애(아동)수당 자격 판정 및 예상 수급액 정밀 모의계산 시스템",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
