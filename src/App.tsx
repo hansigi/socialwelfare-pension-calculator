@@ -803,7 +803,7 @@ export default function App() {
               {/* 신청인 본인 정보 */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
                 <div>
-                  <label className="block text-base sm:text-lg font-bold text-slate-900 mb-1.5">
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 mb-1.5 break-keep">
                     신청인 연령 (만 나이)
                   </label>
                   <div className="relative">
@@ -813,67 +813,67 @@ export default function App() {
                       max={120}
                       value={applicantAge}
                       onChange={(e) => setApplicantAge(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
+                      className="w-full px-3.5 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="absolute right-4 top-3.5 text-base text-slate-500 font-semibold">세</span>
+                    <span className="absolute right-4 top-3 text-sm text-slate-500 font-semibold">세</span>
                   </div>
-                  <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">만 65세 도래 1개월 전 신청가능</span>
+                  <span className="text-xs sm:text-sm text-slate-600 font-medium block mt-1 break-keep">만 65세 도래 1개월 전 신청가능</span>
                 </div>
 
                 <div>
-                  <label className="block text-base sm:text-lg font-bold text-slate-900 mb-1.5">
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 mb-1.5 break-keep">
                     장애 등록 여부
                   </label>
                   <select
                     value={applicantDisability}
                     onChange={(e) => setApplicantDisability(e.target.value as any)}
-                    className="w-full px-4 py-3 text-base sm:text-lg border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white font-semibold"
+                    className="w-full px-3 py-2.5 text-sm sm:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white font-semibold"
                   >
                     <option value="none">비장애 (장애 없음)</option>
                     <option value="severe">등록 중증장애인 (1·2급, 3급중복)</option>
                     <option value="mild">등록 경증장애인 (3~6급)</option>
                   </select>
-                  <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">장애인연금은 중증장애인 대상</span>
+                  <span className="text-xs sm:text-sm text-slate-600 font-medium block mt-1 break-keep">장애인연금은 중증장애인 대상</span>
                 </div>
 
                 <div>
-                  <label className="block text-base sm:text-lg font-bold text-slate-900 mb-1.5">
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 mb-1.5 break-keep">
                     직역연금 수급 여부
                   </label>
                   <select
                     value={applicantOccupationalPension}
                     onChange={(e) => setApplicantOccupationalPension(e.target.value as any)}
-                    className="w-full px-4 py-3 text-base sm:text-lg border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white font-semibold"
+                    className="w-full px-3 py-2.5 text-sm sm:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white font-semibold"
                   >
                     <option value="none">해당 없음 (비수급자)</option>
                     <option value="recipient">직역연금 수급권자 (제외)</option>
                     <option value="exception">예외 (재직10년미만/일시금5년)</option>
                   </select>
-                  <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">공무원·군인·사학연금 등</span>
+                  <span className="text-xs sm:text-sm text-slate-600 font-medium block mt-1 break-keep">공무원·군인·사학연금 등</span>
                 </div>
               </div>
 
               {/* 복지 자격 (기초생활, 차상위) */}
               <div>
-                <label className="block text-base sm:text-lg font-bold text-slate-900 mb-1.5">
+                <label className="block text-sm sm:text-base font-bold text-slate-900 mb-1.5 break-keep">
                   국민기초생활 및 차상위 자격 여부
                 </label>
                 <select
                   value={applicantWelfare}
                   onChange={(e) => setApplicantWelfare(e.target.value as any)}
-                  className="w-full px-4 py-3 text-base sm:text-lg border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white font-semibold"
+                  className="w-full px-3.5 py-2.5 text-sm sm:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 bg-white font-semibold"
                 >
                   <option value="general">일반 (해당 없음 / 차상위 초과)</option>
                   <option value="basic_living">국민기초생활보장 수급자 (생계 또는 의료급여)</option>
                   <option value="near_poverty">차상위계층 (주거·교육급여 또는 중위 50% 이하)</option>
                 </select>
-                <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">장애인연금 부가급여 및 감면 자격 산정 기준</span>
+                <span className="text-xs sm:text-sm text-slate-600 font-medium block mt-1 break-keep">장애인연금 부가급여 및 감면 자격 산정 기준</span>
               </div>
 
               {/* 배우자 유무 토글 */}
               <div className="pt-3 border-t border-slate-100">
-                <label className="flex items-center gap-2.5 cursor-pointer select-none text-base sm:text-lg font-bold text-slate-900">
+                <label className="flex items-center gap-2.5 cursor-pointer select-none text-sm sm:text-base font-bold text-slate-900 break-keep">
                   <input
                     type="checkbox"
                     checked={hasSpouse}
@@ -947,8 +947,8 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">신청인 본인 상시근로소득</span>
-                      <span className="text-base sm:text-lg text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(applicantEarned)}</span>
+                      <span className="text-sm sm:text-base font-bold text-slate-900 break-keep">신청인 본인 상시근로소득</span>
+                      <span className="text-sm sm:text-base text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(applicantEarned)}</span>
                     </div>
                     <div className="relative">
                       <input
@@ -957,19 +957,19 @@ export default function App() {
                         min={0}
                         value={applicantEarned}
                         onChange={(e) => setApplicantEarned(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                        className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
+                        className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
                         placeholder=""
                       />
-                      <span className="absolute right-4 top-3.5 text-base text-slate-500 font-semibold">원/월</span>
+                      <span className="absolute right-4 top-3 text-sm text-slate-500 font-semibold">원/월</span>
                     </div>
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">일용근로, 공공일자리(노인일자리 등) 전액 제외</span>
+                    <span className="text-xs sm:text-sm text-slate-600 font-medium block mt-1 break-keep">일용근로, 공공일자리(노인일자리 등) 전액 제외</span>
                   </div>
 
                   {hasSpouse && (
                     <div>
                       <div className="flex justify-between items-baseline mb-1.5">
-                        <span className="text-base sm:text-lg font-bold text-slate-900">배우자 상시근로소득</span>
-                        <span className="text-base sm:text-lg text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(spouseEarned)}</span>
+                        <span className="text-sm sm:text-base font-bold text-slate-900 break-keep">배우자 상시근로소득</span>
+                        <span className="text-sm sm:text-base text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(spouseEarned)}</span>
                       </div>
                       <div className="relative">
                         <input
@@ -978,19 +978,19 @@ export default function App() {
                           min={0}
                           value={spouseEarned}
                           onChange={(e) => setSpouseEarned(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                          className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
+                          className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
                           placeholder=""
                         />
-                        <span className="absolute right-4 top-3.5 text-base text-slate-500 font-semibold">원/월</span>
+                        <span className="absolute right-4 top-3 text-sm text-slate-500 font-semibold">원/월</span>
                       </div>
-                      <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">배우자도 1인당 기본공제 별도 적용</span>
+                      <span className="text-xs sm:text-sm text-slate-600 font-medium block mt-1 break-keep">배우자도 1인당 기본공제 별도 적용</span>
                     </div>
                   )}
                 </div>
 
                 {/* 국민연금 수령 정보 */}
                 <div className="p-4 sm:p-5 bg-slate-50 rounded-2xl border border-slate-200 space-y-4">
-                  <div className="flex items-center justify-between text-base sm:text-lg font-bold text-slate-900">
+                  <div className="flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 break-keep">
                     <span>국민연금 수령 정보 (기초연금 감액 연계용)</span>
                     <button
                       type="button"
@@ -1000,7 +1000,7 @@ export default function App() {
                           setApplicantNationalPensionA(Math.round(cur * 0.55));
                         }
                       }}
-                      className="text-sm sm:text-base text-blue-600 hover:text-blue-800 font-bold cursor-pointer underline"
+                      className="text-xs sm:text-sm text-blue-600 hover:text-blue-800 font-bold cursor-pointer underline"
                     >
                       A급여액 자동 계산 (55%)
                     </button>
@@ -1009,8 +1009,8 @@ export default function App() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <div className="flex justify-between items-baseline mb-1.5">
-                        <span className="text-sm sm:text-base font-bold text-slate-800">본인 월 국민연금액</span>
-                        <span className="text-sm sm:text-base text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(applicantNationalPension)}</span>
+                        <span className="text-xs sm:text-sm font-bold text-slate-800 break-keep">본인 월 국민연금액</span>
+                        <span className="text-xs sm:text-sm text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(applicantNationalPension)}</span>
                       </div>
                       <input
                         type="number"
@@ -1018,16 +1018,16 @@ export default function App() {
                         min={0}
                         value={applicantNationalPension}
                         onChange={(e) => setApplicantNationalPension(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                        className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold bg-white"
+                        className="w-full px-3.5 py-2 text-sm sm:text-base border border-slate-300 rounded-xl tabular-nums font-bold bg-white"
                         placeholder=""
                       />
-                      <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1">부양가족연금액 제외한 월액</span>
+                      <span className="text-xs sm:text-[13px] text-slate-600 font-medium block mt-1 break-keep">부양가족연금액 제외한 월액</span>
                     </div>
 
                     <div>
                       <div className="flex justify-between items-baseline mb-1.5">
-                        <span className="text-sm sm:text-base font-bold text-slate-800">국민연금 A급여액</span>
-                        <span className="text-sm sm:text-base text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(applicantNationalPensionA)}</span>
+                        <span className="text-xs sm:text-sm font-bold text-slate-800 break-keep">국민연금 A급여액</span>
+                        <span className="text-xs sm:text-sm text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(applicantNationalPensionA)}</span>
                       </div>
                       <input
                         type="number"
@@ -1035,18 +1035,18 @@ export default function App() {
                         min={0}
                         value={applicantNationalPensionA}
                         onChange={(e) => setApplicantNationalPensionA(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                        className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold bg-white"
+                        className="w-full px-3.5 py-2 text-sm sm:text-base border border-slate-300 rounded-xl tabular-nums font-bold bg-white"
                         placeholder=""
                       />
-                      <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1">국민연금 지급내역서의 균등부분(A)</span>
+                      <span className="text-xs sm:text-[13px] text-slate-600 font-medium block mt-1 break-keep">국민연금 지급내역서의 균등부분(A)</span>
                     </div>
                   </div>
 
                   {hasSpouse && (
                     <div className="pt-3 border-t border-slate-200">
                       <div className="flex justify-between items-baseline mb-1.5">
-                        <span className="text-sm sm:text-base font-bold text-slate-800">배우자 월 국민연금액</span>
-                        <span className="text-sm sm:text-base text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(spouseNationalPension)}</span>
+                        <span className="text-xs sm:text-sm font-bold text-slate-800 break-keep">배우자 월 국민연금액</span>
+                        <span className="text-xs sm:text-sm text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(spouseNationalPension)}</span>
                       </div>
                       <input
                         type="number"
@@ -1054,7 +1054,7 @@ export default function App() {
                         min={0}
                         value={spouseNationalPension}
                         onChange={(e) => setSpouseNationalPension(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                        className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold bg-white"
+                        className="w-full px-3.5 py-2 text-sm sm:text-base border border-slate-300 rounded-xl tabular-nums font-bold bg-white"
                         placeholder=""
                       />
                     </div>
@@ -1065,8 +1065,8 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">사업 및 임대소득</span>
-                      <span className="text-base sm:text-lg text-slate-700 font-extrabold tabular-nums">{toKoreanCurrency(businessIncome)}</span>
+                      <span className="text-xs sm:text-[14px] font-bold text-slate-900 break-keep">사업 및 임대소득</span>
+                      <span className="text-xs sm:text-sm text-slate-700 font-extrabold tabular-nums">{toKoreanCurrency(businessIncome)}</span>
                     </div>
                     <input
                       type="number"
@@ -1074,16 +1074,16 @@ export default function App() {
                       min={0}
                       value={businessIncome}
                       onChange={(e) => setBusinessIncome(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                      className="w-full px-3.5 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">월 필요경비 제외 순소득</span>
+                    <span className="text-xs sm:text-[13px] text-slate-600 font-medium block mt-1 break-keep">월 필요경비 제외 순소득</span>
                   </div>
 
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">이자 및 배당소득</span>
-                      <span className="text-base sm:text-lg text-slate-700 font-extrabold tabular-nums">{toKoreanCurrency(interestIncome)}</span>
+                      <span className="text-xs sm:text-[14px] font-bold text-slate-900 break-keep">이자 및 배당소득</span>
+                      <span className="text-xs sm:text-sm text-slate-700 font-extrabold tabular-nums">{toKoreanCurrency(interestIncome)}</span>
                     </div>
                     <input
                       type="number"
@@ -1091,16 +1091,16 @@ export default function App() {
                       min={0}
                       value={interestIncome}
                       onChange={(e) => setInterestIncome(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                      className="w-full px-3.5 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">월 4만원 자동 공제 적용</span>
+                    <span className="text-xs sm:text-[13px] text-slate-600 font-medium block mt-1 break-keep">월 4만원 자동 공제 적용</span>
                   </div>
 
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">개인 사적연금 소득</span>
-                      <span className="text-base sm:text-lg text-slate-700 font-extrabold tabular-nums">{toKoreanCurrency(privatePensionIncome)}</span>
+                      <span className="text-xs sm:text-[14px] font-bold text-slate-900 break-keep">개인 사적연금 소득</span>
+                      <span className="text-xs sm:text-sm text-slate-700 font-extrabold tabular-nums">{toKoreanCurrency(privatePensionIncome)}</span>
                     </div>
                     <input
                       type="number"
@@ -1108,18 +1108,18 @@ export default function App() {
                       min={0}
                       value={privatePensionIncome}
                       onChange={(e) => setPrivatePensionIncome(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                      className="w-full px-3.5 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">연금저축·퇴직연금 수령월액</span>
+                    <span className="text-xs sm:text-[13px] text-slate-600 font-medium block mt-1 break-keep">연금저축·퇴직연금 수령월액</span>
                   </div>
                 </div>
 
                 {/* 자녀 6억 이상 고가주택 무료임차 */}
                 <div className="pt-2">
                   <div className="flex justify-between items-baseline mb-1.5">
-                    <span className="text-base sm:text-lg font-bold text-slate-900">자녀 소유 고가주택(시가 6억 이상) 무료임차 거주</span>
-                    <span className="text-base sm:text-lg text-slate-700 font-extrabold tabular-nums">{toKoreanCurrency(childHouseValue)}</span>
+                    <span className="text-sm sm:text-base font-bold text-slate-900 break-keep">자녀 소유 고가주택(시가 6억 이상) 무료임차 거주</span>
+                    <span className="text-sm sm:text-base text-slate-700 font-extrabold tabular-nums">{toKoreanCurrency(childHouseValue)}</span>
                   </div>
                   <input
                     type="number"
@@ -1127,10 +1127,10 @@ export default function App() {
                     min={0}
                     value={childHouseValue}
                     onChange={(e) => setChildHouseValue(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                    className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                    className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold"
                     placeholder=""
                   />
-                  <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">자녀 명의 6억원 이상 주택에 무료 거주 시 연 0.78% ÷ 12개월 부과 (6억원 미만 공란)</span>
+                  <span className="text-xs sm:text-sm text-slate-600 font-medium block mt-1 break-keep">자녀 명의 6억원 이상 주택에 무료 거주 시 연 0.78% ÷ 12개월 부과 (6억원 미만 공란)</span>
                 </div>
               </div>
             </div>
@@ -1147,11 +1147,12 @@ export default function App() {
 
               <div className="space-y-5">
                 {/* 부동산 및 임차보증금 */}
+                {/* 부동산 및 임차보증금 */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">부동산 시가표준액 (토지, 건물, 자가)</span>
-                      <span className="text-base sm:text-lg text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(realEstateValue)}</span>
+                      <span className="text-sm sm:text-base font-bold text-slate-900 break-keep">부동산 시가표준액 (토지, 건물, 자가)</span>
+                      <span className="text-sm sm:text-base text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(realEstateValue)}</span>
                     </div>
                     <input
                       type="number"
@@ -1159,16 +1160,16 @@ export default function App() {
                       min={0}
                       value={realEstateValue}
                       onChange={(e) => setRealEstateValue(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
+                      className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">공시가격 기준 (기본재산액 공제 자동 적용)</span>
+                    <span className="text-xs text-slate-500 font-medium block mt-1 break-keep whitespace-nowrap">공시가격 기준 (기본재산액 공제 자동 적용)</span>
                   </div>
 
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">주거용 전·월세 임차보증금</span>
-                      <span className="text-base sm:text-lg text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(rentalDeposit)}</span>
+                      <span className="text-sm sm:text-base font-bold text-slate-900 break-keep">주거용 전·월세 임차보증금</span>
+                      <span className="text-sm sm:text-base text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(rentalDeposit)}</span>
                     </div>
                     <input
                       type="number"
@@ -1176,19 +1177,19 @@ export default function App() {
                       min={0}
                       value={rentalDeposit}
                       onChange={(e) => setRentalDeposit(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
+                      className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">임대차계약서 금액의 95%만 재산 반영 (5% 기본공제)</span>
+                    <span className="text-xs text-slate-500 font-medium block mt-1 break-keep whitespace-nowrap">임대차계약서 금액의 95%만 재산 반영 (5% 기본공제)</span>
                   </div>
                 </div>
 
                 {/* 금융재산 및 부채 */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">금융재산 (예적금·주식·보험)</span>
-                      <span className="text-base sm:text-lg text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(financialAssets)}</span>
+                      <span className="text-xs sm:text-[13.5px] font-bold text-slate-900 break-keep whitespace-nowrap">금융재산 (예적금·주식·보험)</span>
+                      <span className="text-xs text-blue-700 font-extrabold tabular-nums">{toKoreanCurrency(financialAssets)}</span>
                     </div>
                     <input
                       type="number"
@@ -1196,16 +1197,16 @@ export default function App() {
                       min={0}
                       value={financialAssets}
                       onChange={(e) => setFinancialAssets(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                      className="w-full px-3 py-2 text-sm sm:text-base border border-slate-300 rounded-xl tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">가구당 2,000만원 기본공제 적용</span>
+                    <span className="text-[11px] sm:text-xs text-slate-500 font-medium block mt-1 break-keep whitespace-nowrap">가구당 2,000만원 기본공제 적용</span>
                   </div>
 
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">금융기관 대출금 (부채)</span>
-                      <span className="text-base sm:text-lg text-rose-700 font-extrabold tabular-nums">{toKoreanCurrency(financialDebt)}</span>
+                      <span className="text-xs sm:text-[13.5px] font-bold text-slate-900 break-keep whitespace-nowrap">금융기관 대출금 (부채)</span>
+                      <span className="text-xs text-rose-700 font-extrabold tabular-nums">{toKoreanCurrency(financialDebt)}</span>
                     </div>
                     <input
                       type="number"
@@ -1213,16 +1214,16 @@ export default function App() {
                       min={0}
                       value={financialDebt}
                       onChange={(e) => setFinancialDebt(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                      className="w-full px-3 py-2 text-sm sm:text-base border border-slate-300 rounded-xl tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">은행 대출, 주택연금 누계액 등</span>
+                    <span className="text-[11px] sm:text-xs text-slate-500 font-medium block mt-1 break-keep whitespace-nowrap">은행 대출, 주택연금 누계액 등</span>
                   </div>
 
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">임대보증금 부채 (전세 준 경우)</span>
-                      <span className="text-base sm:text-lg text-rose-700 font-extrabold tabular-nums">{toKoreanCurrency(rentDepositDebt)}</span>
+                      <span className="text-xs sm:text-[13.5px] font-bold text-slate-900 break-keep whitespace-nowrap">임대보증금 부채 (전세 준 경우)</span>
+                      <span className="text-xs text-rose-700 font-extrabold tabular-nums">{toKoreanCurrency(rentDepositDebt)}</span>
                     </div>
                     <input
                       type="number"
@@ -1230,10 +1231,10 @@ export default function App() {
                       min={0}
                       value={rentDepositDebt}
                       onChange={(e) => setRentDepositDebt(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                      className="w-full px-3 py-2 text-sm sm:text-base border border-slate-300 rounded-xl tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">부동산 시가표준액의 50% 한도 인정</span>
+                    <span className="text-[11px] sm:text-xs text-slate-500 font-medium block mt-1 break-keep whitespace-nowrap">부동산 시가표준액의 50% 한도 인정</span>
                   </div>
                 </div>
 
@@ -1241,8 +1242,8 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-slate-100">
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">고급자동차 (4천만원 이상 10년 미만)</span>
-                      <span className="text-base sm:text-lg text-amber-800 font-extrabold tabular-nums">{toKoreanCurrency(luxuryCarValue)}</span>
+                      <span className="text-sm sm:text-base font-bold text-slate-900 break-keep">고급자동차 (4천만원 이상 10년 미만)</span>
+                      <span className="text-sm sm:text-base text-amber-800 font-extrabold tabular-nums">{toKoreanCurrency(luxuryCarValue)}</span>
                     </div>
                     <input
                       type="number"
@@ -1250,15 +1251,15 @@ export default function App() {
                       min={0}
                       value={luxuryCarValue}
                       onChange={(e) => setLuxuryCarValue(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                      className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold"
                       placeholder=""
                     />
-                    <label className="flex items-center gap-2 text-sm sm:text-base text-slate-800 mt-2.5 cursor-pointer font-bold">
+                    <label className="flex items-center gap-1.5 text-xs text-slate-800 mt-2 cursor-pointer font-bold break-keep whitespace-nowrap">
                       <input
                         type="checkbox"
                         checked={hasDisabledCarExemption}
                         onChange={(e) => setHasDisabledCarExemption(e.target.checked)}
-                        className="w-5 h-5 text-blue-600 rounded"
+                        className="w-4 h-4 text-blue-600 rounded"
                       />
                       <span>등록장애인 차량 1대 비과세 재산산정 제외 특례</span>
                     </label>
@@ -1266,8 +1267,8 @@ export default function App() {
 
                   <div>
                     <div className="flex justify-between items-baseline mb-1.5">
-                      <span className="text-base sm:text-lg font-bold text-slate-900">회원권 가액 (골프·콘도·승마 등)</span>
-                      <span className="text-base sm:text-lg text-amber-800 font-extrabold tabular-nums">{toKoreanCurrency(membershipValue)}</span>
+                      <span className="text-sm sm:text-base font-bold text-slate-900 break-keep">회원권 가액 (골프·콘도·승마 등)</span>
+                      <span className="text-sm sm:text-base text-amber-800 font-extrabold tabular-nums">{toKoreanCurrency(membershipValue)}</span>
                     </div>
                     <input
                       type="number"
@@ -1275,10 +1276,10 @@ export default function App() {
                       min={0}
                       value={membershipValue}
                       onChange={(e) => setMembershipValue(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                      className="w-full px-4 py-3 text-lg sm:text-xl border border-slate-300 rounded-xl tabular-nums font-bold"
+                      className="w-full px-4 py-2.5 text-base sm:text-lg border border-slate-300 rounded-xl tabular-nums font-bold"
                       placeholder=""
                     />
-                    <span className="text-sm sm:text-base text-slate-600 font-medium block mt-1.5">시가표준액 100% 월 소득환산 반영</span>
+                    <span className="text-xs text-slate-500 font-medium block mt-1 break-keep whitespace-nowrap">시가표준액 100% 월 소득환산 반영</span>
                   </div>
                 </div>
               </div>
